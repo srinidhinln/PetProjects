@@ -1,0 +1,114 @@
+#include <iostream>
+using namespace std;
+// compiler directives
+int main()
+{
+	int DD,MM,YYYY,HH,TT,FourH, Hund, Four;
+	bool leapYear;
+	// variable declarations
+	cout<<"Enter Today's Year in YYYY Format"<<endl;
+	cin>>YYYY;
+	cout<<"Enter Today's Month in MM Format"<<endl;
+	cin>>MM;
+	cout<<"Enter Today's Date in DD Format"<<endl;
+	cin>>DD;
+	cout<<"Enter Hours in HH Format, from 00 to 23"<<endl;
+	cin>>HH;
+	cout<<"Enter Minutes in MM Format, from 00 to 59"<<endl;
+	cin>>TT;
+	// printing and taking in all the values for the fortune program
+	FourH = YYYY%400;
+	Hund = YYYY%100;
+	Four = YYYY%4;
+	if (FourH==0||Four==0){leapYear=1;}
+	else if (Hund==0){leapYear=0;}
+	else {leapYear=0;}
+	if (YYYY>0 && YYYY<10000)
+	{
+		if (MM>1 && MM<13)
+		{
+		if (leapYear==1&&MM==2)
+			{
+				if (DD>0 && DD<30)
+				{
+				if (TT > 0 && TT < 60)
+				{
+				if (HH > 0 && HH < 24)
+					{
+						if (HH<12) {cout<<"Good Morning"<<endl;}
+						else if (HH>=12 && HH<17) {cout<<"Good Afternoon"<<endl;}
+						else cout<<"Good Evening"<<endl;
+						return 0;
+					}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Days"<<endl;
+				return -1;
+			}
+		if (leapYear==0&&MM==2) //non leap year feb, 28 days
+			{
+					if (DD>0 && DD<29)
+				{
+				if (TT > 0 && TT < 60)
+				{
+				if (HH > 0 && HH < 24)
+					{
+						if (HH<12) {cout<<"Good Morning"<<endl;}
+						else if (HH>=12 && HH<17) {cout<<"Good Afternoon"<<endl;}
+						else cout<<"Good Evening"<<endl;
+						return 0;
+					}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Days"<<endl;
+				return -1;
+			}
+		if (MM==1||3||5||7||8||10||12)
+			{
+				if (DD>0 && DD<=31)
+				{
+				if (HH < 24 && HH > 0 && TT < 60 && TT > 0)
+					{
+						if (HH<12) {cout<<"Good Morning"<<endl;}
+						else if (HH>=12 && HH<17) {cout<<"Good Afternoon"<<endl;}
+						else cout<<"Good Evening"<<endl;
+						return 0;
+					}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Days"<<endl;
+				return -1;
+			}
+		if (MM==4||6||9||11)
+			{
+				if (DD>0 && DD<=30)
+				{
+				if (HH < 24 && HH > 0 && TT < 60 && TT > 0)
+					{
+						if (HH<12) {cout<<"Good Morning"<<endl;}
+						else if (HH>=12 && HH<17) {cout<<"Good Afternoon"<<endl;}
+						else cout<<"Good Evening"<<endl;
+						return 0;
+					}
+				else cout<<"Wrong Input of Time"<<endl;
+				return -1;
+				}
+				else cout<<"Wrong Input of Days"<<endl;
+				return -1;
+			}
+	    }
+	    else cout<<"Wrong Input of Months"<<endl;
+	    return -1;
+	}
+	else cout<<"Wrong Input of Years"<<endl;
+	return 0;
+	}
